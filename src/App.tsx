@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, lazy } from 'react';
+import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import { FullLayout } from './components/layout/FullLayout/FullLayout';
+import { Path } from './type/Path';
+import { LoaderSkeleton } from './components/Skeletons/LoaderSkeleton/LoaderSkeleton';
+
+const Home = lazy(() => import('./components/Home/Home').then(module => ({default: module.Home})));
+const EpisodeDetails = lazy(() => import('./components/EpisodeDetails/EpisodeDetails').then(module => ({default: module.EpisodeDetails})));
+const NotFound = lazy(() => import('./components/NotFound/NotFound').then(module => ({default: module.NotFound})));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+      <Suspense fallback={<LoaderSkeleton />}>
+        <Routes>
+          <Route path={Path.default} element={<FullLayout />}>
+            <Route index element={<Home />} />
+            <Route path={Path.episodeDetails} element={<EpisodeDetails />} />
+            <Route path={Path.notFound} element={<NotFound />} />
+          </Route>
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
