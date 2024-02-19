@@ -1,7 +1,7 @@
-import axios from 'axios';
 import { getEnvironment } from '../utils/config';
 import { Show } from '../type/Show';
 import { Episode } from '../type/Episode';
+import axios from 'axios';
 
 const TvmazeApiUrl = `${getEnvironment.apiBaseUrl}`;
 

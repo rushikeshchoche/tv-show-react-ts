@@ -14,7 +14,7 @@ export const Home = () => {
   }, [dispatch]);
 
   return (
-    <div data-testid='home'>
+    <div>
       {show && <Card {...show} />}
       {show?.episodes && <EpisodeList episodes={show.episodes} />}
     </div>

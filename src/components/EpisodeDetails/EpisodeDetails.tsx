@@ -17,7 +17,7 @@ export const EpisodeDetails: React.FC = () => {
   }, [dispatch, id]);
 
   return (
-    <div data-testid='movie-info'>
+    <div>
       {episodeDetails && <Card {...episodeDetails}></Card>}
     </div>
   );
