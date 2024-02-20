@@ -25,9 +25,9 @@ The application has two pages (routes): a details page for the TV show "Powerpuf
 │   │   ├── constants.ts                      # constants used in app
 │   │   ├── helper.ts                         # helper functions
 │   ├── redux                                 # Contains redux store
-│   │   ├── episodeDetailsSlice.ts            # EpisodeDetailsReducer which get movie data, error and loading data.
+│   │   ├── episodeDetailsSlice.ts            # EpisodeDetailsReducer which get episode data.
 │   │   ├── hooks.ts                          # Typed hooks with AppSelector and AppDispath.
-│   │   ├── showSlice.ts                      # ShowReducer which get movie data, error and loading data.
+│   │   ├── showSlice.ts                      # ShowReducer which get show data.
 │   │   ├── store.ts                          # Reactjs toolkit with configureStore.
 │   ├── service/                              # contains service to get show and episode details
 │   ├── type/                                 # data types for Show, Episode and Path
