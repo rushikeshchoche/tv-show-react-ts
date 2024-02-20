@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+# TV show React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is aTv show application based on React to view "Powerpuff Girls" show details and its episodes.
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+The application has two pages (routes): a details page for the TV show "Powerpuff Girls", and an episode detail page with information about specific episodes.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Project Structure
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+├── src
+│   ├── components
+│   │   ├── Card/Card.tsx                     # Displays show and episode details card
+│   │   ├── EpisodeCard/EpisodeCard.txs       # Displays Episode card inside a list
+│   │   ├── EpisodeDetails/EpisodeDetails.txs # Episode Details Page Component
+│   │   ├── EpisodeList/EpisodeList.txs       # Displays Episode List with all cards
+│   │   ├── Home/Home.tsx                     # Home Page Component
+│   │   ├── layout/                           # App layout - header, footer and content
+│   │   ├── NotFound/NotFound/tsx             # Displays Page not found error
+│   │   ├── Skeletons/                        # Loading skeleton components
+│   ├── utils                                 # Contains helper util functions
+│   │   ├── config.ts                         # api url config for all envs
+│   │   ├── constants.ts                      # constants used in app
+│   │   ├── helper.ts                         # helper functions
+│   ├── redux                                 # Contains redux store
+│   │   ├── episodeDetailsSlice.ts            # EpisodeDetailsReducer which get movie data, error and loading data.
+│   │   ├── hooks.ts                          # Typed hooks with AppSelector and AppDispath.
+│   │   ├── showSlice.ts                      # ShowReducer which get movie data, error and loading data.
+│   │   ├── store.ts                          # Reactjs toolkit with configureStore.
+│   ├── service/                              # contains service to get show and episode details
+│   ├── type/                                 # data types for Show, Episode and Path
+│   ├── App.tsx                               # This is the root component of the application
+│   ├── index.tsx                             # ReactDOM.render is called
+```
 
-### `npm test`
+## Get started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Clone the repo
 
-### `npm run build`
+```shell
+git clone https://github.com/rushikeshchoche/tv-show-react-ts
+cd tv-show-react-ts
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install npm packages
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install the `npm` packages described in the `package.json` and verify that it works:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+npm install
+npm start
+```
 
-### `npm run eject`
+The `npm start` runs the application with watch mode on port `3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Shut it down manually with `Ctrl+C`.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### npm scripts
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+These are the commands defined in `package.json`:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* `npm start` - Runs the app in development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* `npm run build` - Builds the app. The build artifacts will be stored in the `build/` directory.
+* `npm test` - Executes the unit tests in the interactive watch mode.
+* `npm run lint` - Runs linting.
