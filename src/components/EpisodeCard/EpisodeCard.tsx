@@ -11,7 +11,7 @@ export const EpisodeCard: React.FC<Episode> = ({
   number,
   name,
   airdate,
-  runtime
+  runtime,
 }) => {
   return (
     <EpisodeCardContainer>

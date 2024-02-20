@@ -6,6 +6,10 @@ This project is a Tv show application based on React to view "Powerpuff Girls" s
 
 The application has two main pages (routes): Home page which is a details page for the TV show "Powerpuff Girls", and an episode detail page with information about specific episodes.
 
+### The App is hosted on google firebase
+```shell
+https://tv-show-react-ts.web.app/
+```
 
 ## Project Structure
 
